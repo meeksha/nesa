@@ -1,0 +1,215 @@
+﻿<Window x:Class="nesa.AnalyticsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+        Title="Patient Analytics"
+        Height="650"
+        Width="1000"
+        WindowStartupLocation="CenterScreen">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Grid Margin="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            
+
+            <TextBlock Grid.Row="0"
+                       Text="PATIENT ANALYTICS"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+
+           
+
+            <Grid Grid.Row="1" Margin="0,0,0,20">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+
+                <Border Grid.Column="0"
+                        Margin="5"
+                        Padding="15"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <StackPanel>
+                        <TextBlock Text="Total Patients"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBlock x:Name="totalPatientsText"
+                                   Text="0"
+                                   FontSize="24"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                </Border>
+
+
+                
+
+                <Border Grid.Column="1"
+                        Margin="5"
+                        Padding="15"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <StackPanel>
+                        <TextBlock Text="Average Age"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBlock x:Name="averageAgeText"
+                                   Text="0"
+                                   FontSize="24"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                </Border>
+
+
+               
+
+                <Border Grid.Column="2"
+                        Margin="5"
+                        Padding="15"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <StackPanel>
+                        <TextBlock Text="Minimum Age"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBlock x:Name="minimumAgeText"
+                                   Text="0"
+                                   FontSize="24"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                </Border>
+
+
+               
+
+                <Border Grid.Column="3"
+                        Margin="5"
+                        Padding="15"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <StackPanel>
+                        <TextBlock Text="Maximum Age"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBlock x:Name="maximumAgeText"
+                                   Text="0"
+                                   FontSize="24"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                </Border>
+
+
+                
+
+                <Border Grid.Column="4"
+                        Margin="5"
+                        Padding="15"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <StackPanel>
+                        <TextBlock Text="Common Diagnosis"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBlock x:Name="commonDiagnosisText"
+                                   Text="-"
+                                   FontSize="20"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+
+            
+            <Border Grid.Row="2"
+                    Margin="5"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CornerRadius="8">
+
+                <StackPanel>
+
+                    <TextBlock Text="Patients by Diagnosis"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Margin="0,0,0,10"/>
+
+                    <lvc:PieChart x:Name="diagnosisChart"
+                                  Height="250"/>
+
+                </StackPanel>
+
+            </Border>
+
+
+            
+
+            <Border Grid.Row="3"
+                    Margin="5"
+                    Padding="10"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CornerRadius="8">
+
+                <StackPanel>
+
+                    <TextBlock Text="Patients by Age Group"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Margin="0,0,0,10"/>
+
+                    <lvc:CartesianChart x:Name="ageChart"
+                                        Height="250"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+
+    </ScrollViewer>
+
+</Window>

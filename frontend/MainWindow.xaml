@@ -1,0 +1,259 @@
+﻿<Window x:Class="nesa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:nesa"
+        mc:Ignorable="d"
+        Title="Patient Management System"
+        Height="700"
+        Width="1000"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Margin="0,0,0,20">
+
+            <TextBlock Text="Patient Management System"
+                       FontSize="28"
+                       FontWeight="Bold"/>
+
+        </StackPanel>
+        <Border Grid.Row="1"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="15"
+                Margin="0,0,0,15">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Text="Patient ID:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,10"/>
+
+                <TextBox Grid.Row="0"
+                         Grid.Column="1"
+                         x:Name="idbox"
+                         Height="30"
+                         Margin="0,0,20,10"/>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="2"
+                           Text="Name:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,10"/>
+                <TextBox Grid.Row="0"
+                         Grid.Column="3"
+                         x:Name="namebox"
+                         Height="30"
+                         Margin="0,0,0,10"/>
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Text="Age:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,0"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         x:Name="agebox"
+                         Height="30"
+                         Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="1"
+                           Grid.Column="2"
+                           Text="Diagnosis:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,0"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="3"
+                         x:Name="diabox"
+                         Height="30"/>
+
+            </Grid>
+
+        </Border>
+        <StackPanel Grid.Row="2">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+
+                <Button x:Name="mybutton"
+                        Content="Submit"
+                        Click="submit_click"
+                        Width="110"
+                        Height="32"
+                        Margin="0,0,10,0"/>
+
+                <Button x:Name="update"
+                        Content="Update"
+                        Click="update_click"
+                        Width="110"
+                        Height="32"
+                        Margin="0,0,10,0"/>
+
+                <Button x:Name="delete"
+                        Content="Delete"
+                        Click="delete_click"
+                        Width="110"
+                        Height="32"
+                        Margin="0,0,10,0"/>
+
+                <Button x:Name="clear"
+                        Content="Clear"
+                        Click="clear_click"
+                        Width="110"
+                        Height="32"/>
+
+                <Button x:Name="analytics"
+                        Content="Analytics"
+                        Click="analytics_click"
+                        Width="110"
+                        Height="32"
+                        Margin="10,0,0,0"/>
+
+            </StackPanel>
+            <Grid Margin="0,0,0,10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Text="Search:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,0"/>
+
+                <TextBox Grid.Column="1"
+                         x:Name="searchbox"
+                         Height="30"/>
+
+                <Button Grid.Column="2"
+                        x:Name="search"
+                        Content="Search"
+                        Click="search_click"
+                        Height="30"
+                        Margin="10,0,0,0"/>
+
+            </Grid>
+            <Grid Margin="0,0,0,10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Text="Age Filter:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,0"/>
+
+                <TextBox Grid.Column="1"
+                         x:Name="minagebox"
+                         Height="30"/>
+
+                <TextBlock Grid.Column="2"
+                           Text="to"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="10,0"/>
+
+                <TextBox Grid.Column="3"
+                         x:Name="maxagebox"
+                         Height="30"/>
+
+                <Button Grid.Column="4"
+                        x:Name="filter"
+                        Content="Filter"
+                        Click="filter_click"
+                        Height="30"
+                        Margin="10,0,0,0"/>
+
+            </Grid>
+            <Grid Margin="0,0,0,15">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Text="Sort By:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,0"/>
+
+                <ComboBox Grid.Column="1"
+                          x:Name="sortbox"
+                          Height="30">
+
+                    <ComboBoxItem Content="id"/>
+                    <ComboBoxItem Content="name"/>
+                    <ComboBoxItem Content="age"/>
+                    <ComboBoxItem Content="diagnosis"/>
+
+                </ComboBox>
+
+                <Button Grid.Column="2"
+                        Content="Ascending"
+                        Click="sort_asc_click"
+                        Height="30"
+                        Margin="10,0,0,0"/>
+
+                <Button Grid.Column="3"
+                        Content="Descending"
+                        Click="sort_desc_click"
+                        Height="30"
+                        Margin="10,0,0,0"/>
+
+            </Grid>
+
+        </StackPanel>
+        <Border Grid.Row="3"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="5">
+
+            <DataGrid x:Name="patientdata"
+                      SelectionChanged="selection"
+                      AutoGenerateColumns="True"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      GridLinesVisibility="Horizontal"
+                      HeadersVisibility="Column"
+                      RowHeight="32"
+                      FontSize="14"/>
+
+        </Border>
+
+    </Grid>
+
+</Window>

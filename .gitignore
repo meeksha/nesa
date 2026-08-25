@@ -1,0 +1,17 @@
+.vs/
+*.user
+*.suo
+bin/
+obj/
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.db
+*.sqlite
+*.sqlite3
+.env
+*.log
+logs/
+.DS_Store
+Thumbs.db
