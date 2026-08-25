@@ -16,33 +16,9 @@ The API uses JSON for request and response data.
 
 ---
 
-## 1. GET /hello
 
-Checks whether the API is running.
 
-### Request
-
-```http
-GET /hello
-```
-
-### Response
-
-```json
-{
-  "message": "Hello, World!"
-}
-```
-
-### Status Codes
-
-| Code | Meaning |
-|---|---|
-| 200 | Successful response |
-
----
-
-# 2. GET /patients
+# 1. GET /patients
 
 Returns patient records.
 
@@ -180,7 +156,7 @@ is rejected instead of being used in the SQL query.
 
 ---
 
-# 3. POST /patients
+# 2. POST /patients
 
 Creates a new patient.
 
@@ -229,7 +205,7 @@ diagnosis   string
 
 ---
 
-# 4. PUT /patients/{patient_id}
+# 3. PUT /patients/{patient_id}
 
 Updates an existing patient.
 
@@ -276,7 +252,7 @@ diagnosis
 
 ---
 
-# 5. DELETE /patients/{patient_id}
+# 4. DELETE /patients/{patient_id}
 
 Deletes a patient.
 
@@ -296,7 +272,7 @@ DELETE /patients/3
 
 ---
 
-# 6. GET /analytics
+# 5. GET /analytics
 
 Returns statistical information about the current patient database.
 
